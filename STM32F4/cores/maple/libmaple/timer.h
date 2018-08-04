@@ -130,6 +130,18 @@ typedef struct timer_bas_reg_map {
 #define TIMER7_BASE        ((struct timer_bas_reg_map*)0x40001400)
 /** Timer 8 register map base pointer */
 #define TIMER8_BASE        ((struct timer_adv_reg_map*)0x40010400)
+/** Timer 9 register map base pointer */
+#define TIMER9_BASE        ((struct timer_gen_reg_map*)0x40014000)
+/** Timer 10 register map base pointer */
+#define TIMER10_BASE        ((struct timer_gen_reg_map*)0x40014400)
+/** Timer 11 register map base pointer */
+#define TIMER11_BASE        ((struct timer_gen_reg_map*)0x40014800)
+/** Timer 12 register map base pointer */
+#define TIMER12_BASE        ((struct timer_gen_reg_map*)0x40001800)
+/** Timer 13 register map base pointer */
+#define TIMER13_BASE        ((struct timer_gen_reg_map*)0x40001C00)
+/** Timer 14 register map base pointer */
+#define TIMER14_BASE        ((struct timer_gen_reg_map*)0x40002000)
 #endif
 
 /*
@@ -178,6 +190,12 @@ extern timer_dev *TIMER5;
 extern timer_dev *TIMER6;
 extern timer_dev *TIMER7;
 extern timer_dev *TIMER8;
+extern timer_dev *TIMER9;
+extern timer_dev *TIMER10;
+extern timer_dev *TIMER11;
+extern timer_dev *TIMER12;
+extern timer_dev *TIMER13;
+extern timer_dev *TIMER14;
 #endif
 
 /*

@@ -82,6 +82,9 @@ extern HardwareSerial Serial2;
 extern HardwareSerial Serial3;
 extern HardwareSerial Serial4;
 extern HardwareSerial Serial5;
+#if defined EU_STM32F407ZGT6
+extern HardwareSerial Serial6;
+#endif
 #endif
 extern HardwareSerial &SerialDebug;
 #endif

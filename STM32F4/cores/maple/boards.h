@@ -52,7 +52,7 @@ enum {
     D32, D33, D34, D35, D36, D37, D38, D39, D40, D41, D42, D43, D44, D45, D46,
     D47, D48, D49, D50, D51, D52, D53, D54, D55, D56, D57, D58, D59, D60, D61,
     D62, D63, D64, D65, D66, D67, D68, D69, D70, D71, D72, D73, D74, D75, D76,
-#if 0 // not available on LQFP100 package
+#if LQFP144 // not available on LQFP100 package
     D77, D78, D79, D80, D81, D82, D83, D84, D85, D86, D87, D88, D89, D90, D91,
     D92, D93, D94, D95, D96, D97, D98, D99, D100, D101, D102, D103, D104, D105,
     D106, D107, D108, D109, D110, D111,
@@ -129,6 +129,8 @@ extern bool boardUsesPin(uint8 pin);
 #include "discovery_f4.h"
 #elif defined(BOARD_generic_f407v)
 #include "generic_f407v.h"
+#elif defined(BOARD_eu_stm32f407zgt6)
+#include "eu_stm32f407zgt6.h"
 #elif defined(BOARD_freeflight)
 #include "freeflight.h"
 #else

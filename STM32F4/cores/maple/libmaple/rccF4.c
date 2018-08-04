@@ -64,6 +64,7 @@ static const struct rcc_dev_info rcc_dev_table[] = {
     [RCC_ADC2]    = { .clk_domain = APB2, .line_num =  9 }, //*
     [RCC_ADC3]    = { .clk_domain = APB2, .line_num = 10 }, //*
     [RCC_USART1]  = { .clk_domain = APB2, .line_num =  4 }, //*
+	[RCC_USART6]  = { .clk_domain = APB2, .line_num =  5 }, //*	
     [RCC_USART2]  = { .clk_domain = APB1, .line_num = 17 }, //unchanged
     [RCC_USART3]  = { .clk_domain = APB1, .line_num = 18 }, //unchanged
     [RCC_TIMER1]  = { .clk_domain = APB2, .line_num =  0 }, //*
@@ -77,6 +78,7 @@ static const struct rcc_dev_info rcc_dev_table[] = {
     [RCC_BKP]     = { .clk_domain = AHB1, .line_num = 18},  //*
     [RCC_I2C1]    = { .clk_domain = APB1, .line_num = 21 }, //unchanged
     [RCC_I2C2]    = { .clk_domain = APB1, .line_num = 22 }, //unchanged
+	[RCC_I2C3]    = { .clk_domain = APB1, .line_num = 23 }, //unchanged
     [RCC_CRC]     = { .clk_domain = AHB1, .line_num = 12},  //*
 //    [RCC_FLITF]   = { .clk_domain = AHB,  .line_num =  4},
 //    [RCC_SRAM]    = { .clk_domain = AHB,  .line_num =  2},

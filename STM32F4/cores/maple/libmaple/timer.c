@@ -116,6 +116,63 @@ timer_dev timer8 = {
 };
 /** Timer 8 device (advanced) */
 timer_dev *TIMER8 = &timer8;
+
+timer_dev timer9 = {
+    .regs         = { .gen = TIMER9_BASE },
+    .clk_id       = RCC_TIMER9,
+    .type         = TIMER_GENERAL,
+    .handlers     = { [NR_GEN_HANDLERS - 1] = 0 },
+};
+
+/** Timer 9 device (RESTRICTED_GENERAL_TIMER) */
+timer_dev *TIMER9 = &timer9;
+
+timer_dev timer10 = {
+    .regs         = { .gen = TIMER10_BASE },
+    .clk_id       = RCC_TIMER10,
+    .type         = TIMER_GENERAL,
+    .handlers     = { [NR_GEN_HANDLERS - 1] = 0 },
+};
+/** Timer 10 device (RESTRICTED_GENERAL_TIMER) */
+timer_dev *TIMER10 = &timer10;
+
+timer_dev timer11 = {
+    .regs         = { .gen = TIMER11_BASE },
+    .clk_id       = RCC_TIMER11,
+    .type         = TIMER_GENERAL,
+    .handlers     = { [NR_GEN_HANDLERS - 1] = 0 },
+};
+/** Timer 11 device (RESTRICTED_GENERAL_TIMER) */
+timer_dev *TIMER11 = &timer11;
+
+timer_dev timer12 = {
+    .regs         = { .gen = TIMER12_BASE },
+    .clk_id       = RCC_TIMER12,
+    .type         = TIMER_GENERAL,
+    .handlers     = { [NR_GEN_HANDLERS - 1] = 0 },
+};
+/** Timer 12 device (RESTRICTED_GENERAL_TIMER) */
+timer_dev *TIMER12 = &timer12;
+
+timer_dev timer13 = {
+    .regs         = { .gen = TIMER13_BASE },
+    .clk_id       = RCC_TIMER13,
+    .type         = TIMER_GENERAL,
+    .handlers     = { [NR_GEN_HANDLERS - 1] = 0 },
+};
+/** Timer 13 device (RESTRICTED_GENERAL_TIMER) */
+timer_dev *TIMER13 = &timer13;
+
+timer_dev timer14 = {
+    .regs         = { .gen = TIMER14_BASE },
+    .clk_id       = RCC_TIMER14,
+    .type         = TIMER_GENERAL,
+    .handlers     = { [NR_GEN_HANDLERS - 1] = 0 },
+};
+/** Timer 14 device (RESTRICTED_GENERAL_TIMER) */
+timer_dev *TIMER14 = &timer14;
+
+
 #endif
 
 /*
@@ -204,6 +261,12 @@ void timer_foreach(void (*fn)(timer_dev*)) {
     fn(TIMER6);
     fn(TIMER7);
     fn(TIMER8);
+    fn(TIMER9);
+    fn(TIMER10);
+    fn(TIMER11);
+    fn(TIMER12);
+    fn(TIMER13);
+    fn(TIMER14);
 #endif
 }
 
@@ -306,6 +369,30 @@ void __irq_tim8_trg_com(void) {
 
 void __irq_tim8_cc(void) {
     dispatch_adv_cc(TIMER8);
+}
+
+void __irq_tim9(void) {
+    dispatch_general(TIMER9);
+}
+
+void __irq_tim10(void) {
+    dispatch_general(TIMER10);
+}
+
+void __irq_tim11(void) {
+    dispatch_general(TIMER11);
+}
+
+void __irq_tim12(void) {
+    dispatch_general(TIMER12);
+}
+
+void __irq_tim13(void) {
+    dispatch_general(TIMER13);
+}
+
+void __irq_tim14(void) {
+    dispatch_general(TIMER14);
 }
 #endif
 
@@ -471,7 +558,7 @@ static void enable_nonmuxed_irq(timer_dev *dev) {
         break;
     case RCC_TIMER7:
         nvic_irq_enable(NVIC_TIMER7);
-        break;
+        break;       
 #endif
     default:
         ASSERT_FAULT(0);

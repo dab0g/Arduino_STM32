@@ -72,7 +72,7 @@ const gpio_dev GPIOE = {
     .exti_port = AFIO_EXTI_PE,
 };
 
- #if 0 // not available on LQFP 100 package
+#if LQFP144 // not available on LQFP 100 package
 /** GPIO port F device. */
 const gpio_dev GPIOF = {
     .regs      = GPIOF_BASE,
@@ -116,9 +116,9 @@ void gpio_init_all(void) {
 
 #ifdef STM32_HIGH_DENSITY
 	gpio_init(&GPIOE);
-  #if 0 // not available on LQFP 100 package
-	gpio_init(GPIOF);
-	gpio_init(GPIOG);
+  #if LQFP144 // not available on LQFP 100 package
+	gpio_init(&GPIOF);
+	gpio_init(&GPIOG);
   #endif // not available on LQFP 100 package
 #endif
 

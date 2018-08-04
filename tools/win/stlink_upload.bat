@@ -11,6 +11,7 @@ set str=%str:/=\%
 
 
 rem: ------------- use STLINK CLI
+//TODO: Доделать для совместимости с загрузчиком - USER_ADDR_ROM в eu_st32f407zgt6
 stlink\ST-LINK_CLI.exe -c SWD -P %str% 0x8000000 -Rst -Run
 
 rem: Using the open source texane-stlink instead of the proprietary STM stlink exe

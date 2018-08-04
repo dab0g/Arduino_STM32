@@ -74,7 +74,7 @@ typedef enum afio_exti_port {
     AFIO_EXTI_PD,               /**< Use port D (PDx) pin. */
 #ifdef STM32_HIGH_DENSITY
     AFIO_EXTI_PE,               /**< Use port E (PEx) pin. */
- #if 0 // not available on LQFP 100 package
+ #if LQFP144 // not available on LQFP 100 package
     AFIO_EXTI_PF,               /**< Use port F (PFx) pin. */
     AFIO_EXTI_PG,               /**< Use port G (PGx) pin. */
  #endif // not available on LQFP 100 package
@@ -95,12 +95,10 @@ extern const gpio_dev GPIOC;
 extern const gpio_dev GPIOD;
 #ifdef STM32_HIGH_DENSITY
 extern const gpio_dev GPIOE;
- #if 0 // not available on LQFP 100 package
-extern gpio_dev gpiof;
-extern gpio_dev* const GPIOF;
-extern gpio_dev gpiog;
-extern gpio_dev* const GPIOG;
- #endif // not available on LQFP 100 package
+#if LQFP144 // not available on LQFP 100 package
+extern const gpio_dev GPIOF;
+extern const gpio_dev GPIOG;
+#endif // not available on LQFP 100 package
 #endif
 
 /** GPIO port register map base pointer */
@@ -110,10 +108,10 @@ extern gpio_dev* const GPIOG;
 #define GPIOD_BASE                      ((struct gpio_reg_map*)0x40020C00)
 #ifdef STM32_HIGH_DENSITY
 #define GPIOE_BASE                      ((struct gpio_reg_map*)0x40021000)
- #if 0 // not available on LQFP 100 package
+#if LQFP144 // not available on LQFP 100 package
 #define GPIOF_BASE                      ((struct gpio_reg_map*)0x40021400)
 #define GPIOG_BASE                      ((struct gpio_reg_map*)0x40021800)
- #endif // not available on LQFP 100 package
+#endif // not available on LQFP 100 package
 #endif
 
 /*

@@ -54,6 +54,12 @@
 #define RX4 BOARD_UART4_RX_PIN
 #define TX5 BOARD_UART5_TX_PIN
 #define RX5 BOARD_UART5_RX_PIN
+
+#if defined EU_STM32F407ZGT6
+#define TX6 BOARD_USART6_TX_PIN
+#define RX6 BOARD_USART6_RX_PIN
+#endif
+
 #endif
 
 HardwareSerial Serial1(USART1, TX1, RX1);
@@ -69,6 +75,11 @@ HardwareSerial Serial3(USART3, TX3, RX3);
 #if defined(STM32_HIGH_DENSITY) && !defined(BOARD_maple_RET6)
 HardwareSerial Serial4(UART4,  TX4, RX4);
 HardwareSerial Serial5(UART5,  TX5, RX5);
+
+#if defined EU_STM32F407ZGT6
+HardwareSerial Serial6(USART6, TX6, RX6);
+#endif
+
 #endif
 
 HardwareSerial::HardwareSerial(usart_dev *usart_device,

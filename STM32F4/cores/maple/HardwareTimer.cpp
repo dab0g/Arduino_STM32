@@ -54,6 +54,12 @@ HardwareTimer::HardwareTimer(uint8 timerNum) {
         TIMER6,
         TIMER7,
         TIMER8,
+        TIMER9,
+        TIMER10,
+        TIMER11,
+        TIMER12,
+        TIMER13,
+        TIMER14,
 #endif
     };
     this->dev = devs[timerNum - 1];
@@ -148,4 +154,10 @@ HardwareTimer Timer5(5);
 HardwareTimer Timer6(6);
 HardwareTimer Timer7(7);
 HardwareTimer Timer8(8);
+HardwareTimer Timer9(9);
+HardwareTimer Timer10(10);
+HardwareTimer Timer11(11);
+HardwareTimer Timer12(12);
+HardwareTimer Timer13(13);
+HardwareTimer Timer14(14);
 #endif
