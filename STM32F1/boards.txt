@@ -368,13 +368,20 @@ genericSTM32F103C.menu.device_variant.STM32F103CB.build.ldscript=ld/jtag.ld
 genericSTM32F103C.menu.device_variant.STM32F103CB.upload.maximum_size=131072
 genericSTM32F103C.menu.device_variant.STM32F103CB.upload.maximum_data_size=20480
 
+## STM32F103CB_BOOTLOADER---------------
+genericSTM32F103C.menu.device_variant.STM32F103CB_BL=STM32F103CB (20k RAM. 128k Flash, Bootloader)
+genericSTM32F103C.menu.device_variant.STM32F103CB_BL.build.cpu_flags=-DMCU_STM32F103CB
+genericSTM32F103C.menu.device_variant.STM32F103CB_BL.build.vect=VECT_TAB_ADDR=0x8001000
+genericSTM32F103C.menu.device_variant.STM32F103CB_BL.build.ldscript=ld/bootloader_10.ld
+genericSTM32F103C.menu.device_variant.STM32F103CB_BL.upload.maximum_size=135168
+genericSTM32F103C.menu.device_variant.STM32F103CB_BL.upload.maximum_data_size=20480
 #---------------------------- UPLOAD METHODS ---------------------------
 
 genericSTM32F103C.menu.upload_method.DFUUploadMethod=STM32duino bootloader
 genericSTM32F103C.menu.upload_method.DFUUploadMethod.upload.protocol=maple_dfu
 genericSTM32F103C.menu.upload_method.DFUUploadMethod.upload.tool=maple_upload
 genericSTM32F103C.menu.upload_method.DFUUploadMethod.build.upload_flags=-DSERIAL_USB -DGENERIC_BOOTLOADER
-genericSTM32F103C.menu.upload_method.DFUUploadMethod.build.vect=VECT_TAB_ADDR=0x8002000
+genericSTM32F103C.menu.upload_method.DFUUploadMethod.build.vect=VECT_TAB_ADDR=0x8001000
 genericSTM32F103C.menu.upload_method.DFUUploadMethod.build.ldscript=ld/bootloader_20.ld
 genericSTM32F103C.menu.upload_method.DFUUploadMethod.upload.usbID=1EAF:0003
 genericSTM32F103C.menu.upload_method.DFUUploadMethod.upload.altID=2
@@ -388,6 +395,12 @@ genericSTM32F103C.menu.upload_method.STLinkMethod=STLink
 genericSTM32F103C.menu.upload_method.STLinkMethod.upload.protocol=STLink
 genericSTM32F103C.menu.upload_method.STLinkMethod.upload.tool=stlink_upload
 genericSTM32F103C.menu.upload_method.STLinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER
+
+genericSTM32F103C.menu.upload_method.STLinkMethod_BL=STLink_bootloader
+genericSTM32F103C.menu.upload_method.STLinkMethod_BL.upload.protocol=STLink
+genericSTM32F103C.menu.upload_method.STLinkMethod_BL.upload.tool=stlink_upload_bootloader
+genericSTM32F103C.menu.upload_method.STLinkMethod_BL.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DGENERIC_BOOTLOADER
+
 
 genericSTM32F103C.menu.upload_method.BMPMethod=BMP (Black Magic Probe)
 genericSTM32F103C.menu.upload_method.BMPMethod.upload.protocol=gdb_bmp
